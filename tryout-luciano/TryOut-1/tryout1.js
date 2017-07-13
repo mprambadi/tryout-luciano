@@ -20,16 +20,29 @@ for (var i = 0; i < myArray.length; i++) {
     counts[myArray[i]] = 1 + (counts[myArray[i]] || 0);
 }
 console.log("Jumlah kata yang unik dan jumlahnya masing-masing: ");
-console.log(counts)
 
-var r = /\d+/g;
-var s = data;
-var m;
-var i=0;
-while ((m = r.exec(s)) != null) {
-	console.log(m[0]);
+Object.keys(counts).forEach(function(key) {
+
+    console.log(key+" : "+counts[key]);
+
+});
+
+
+var numberPattern = /\d+/g;
+var angka = data.match( numberPattern )
+
+var s = "";
+for(var i = 0; i < angka.length; i += 1) {
+  s += angka[i] + " ";
 }
 
+console.log("Ada "+i+" Angka :"+ s);
+
+var arrayOfNumbers = angka.map(Number);
+		
+
+var sum = arrayOfNumbers.reduce((a, b) => a + b, 0);
+console.log("Jumlah semua angka: "+sum); // 6
 
 });
 
