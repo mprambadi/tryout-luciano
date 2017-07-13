@@ -15,14 +15,20 @@ var unique = myArray.filter((v, i, a) => a.indexOf(v) === i);
 console.log("Jumlah semua kata: "+myArray.length);
 console.log("Jumlah kata unik: " +unique.length)
 
-
-console.log("Jumlah kata yang unik dan jumlahnya masing-masing: ");
 var counts = {};
 for (var i = 0; i < myArray.length; i++) {
     counts[myArray[i]] = 1 + (counts[myArray[i]] || 0);
 }
-
+console.log("Jumlah kata yang unik dan jumlahnya masing-masing: ");
 console.log(counts)
+
+var r = /\d+/g;
+var s = data;
+var m;
+var i=0;
+while ((m = r.exec(s)) != null) {
+	console.log(m[0]);
+}
 
 
 });
